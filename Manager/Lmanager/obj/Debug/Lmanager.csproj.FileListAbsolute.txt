@@ -1,0 +1,10 @@
+C:\Users\Huawei\source\repos\Lmanager\bin\Debug\Lmanager.exe.config
+C:\Users\Huawei\source\repos\Lmanager\bin\Debug\Lmanager.exe
+C:\Users\Huawei\source\repos\Lmanager\bin\Debug\Lmanager.pdb
+C:\Users\Huawei\source\repos\Lmanager\bin\Debug\ManagerLib.dll
+C:\Users\Huawei\source\repos\Lmanager\bin\Debug\ManagerLib.pdb
+C:\Users\Huawei\source\repos\Lmanager\obj\Debug\Lmanager.csproj.AssemblyReference.cache
+C:\Users\Huawei\source\repos\Lmanager\obj\Debug\Lmanager.csproj.CoreCompileInputs.cache
+C:\Users\Huawei\source\repos\Lmanager\obj\Debug\Lmanager.csproj.CopyComplete
+C:\Users\Huawei\source\repos\Lmanager\obj\Debug\Lmanager.exe
+C:\Users\Huawei\source\repos\Lmanager\obj\Debug\Lmanager.pdb

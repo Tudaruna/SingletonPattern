@@ -1,0 +1,11 @@
+C:\Users\Huawei\source\repos\ManagerTest\bin\Debug\ManagerTest.dll
+C:\Users\Huawei\source\repos\ManagerTest\bin\Debug\ManagerTest.pdb
+C:\Users\Huawei\source\repos\ManagerTest\bin\Debug\ManagerLib.dll
+C:\Users\Huawei\source\repos\ManagerTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Huawei\source\repos\ManagerTest\bin\Debug\ManagerLib.pdb
+C:\Users\Huawei\source\repos\ManagerTest\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Huawei\source\repos\ManagerTest\obj\Debug\ManagerTest.csproj.AssemblyReference.cache
+C:\Users\Huawei\source\repos\ManagerTest\obj\Debug\ManagerTest.csproj.CoreCompileInputs.cache
+C:\Users\Huawei\source\repos\ManagerTest\obj\Debug\ManagerTest.csproj.CopyComplete
+C:\Users\Huawei\source\repos\ManagerTest\obj\Debug\ManagerTest.dll
+C:\Users\Huawei\source\repos\ManagerTest\obj\Debug\ManagerTest.pdb

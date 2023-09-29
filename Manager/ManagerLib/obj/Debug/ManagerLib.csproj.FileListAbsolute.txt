@@ -1,0 +1,6 @@
+C:\Users\Huawei\source\repos\ManagerLib\bin\Debug\ManagerLib.dll
+C:\Users\Huawei\source\repos\ManagerLib\bin\Debug\ManagerLib.pdb
+C:\Users\Huawei\source\repos\ManagerLib\obj\Debug\ManagerLib.csproj.AssemblyReference.cache
+C:\Users\Huawei\source\repos\ManagerLib\obj\Debug\ManagerLib.csproj.CoreCompileInputs.cache
+C:\Users\Huawei\source\repos\ManagerLib\obj\Debug\ManagerLib.dll
+C:\Users\Huawei\source\repos\ManagerLib\obj\Debug\ManagerLib.pdb
