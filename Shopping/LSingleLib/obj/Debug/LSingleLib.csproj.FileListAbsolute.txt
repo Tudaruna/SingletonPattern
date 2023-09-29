@@ -1,0 +1,6 @@
+C:\Users\Huawei\source\repos\LSingleLib\bin\Debug\LSingleLib.dll
+C:\Users\Huawei\source\repos\LSingleLib\bin\Debug\LSingleLib.pdb
+C:\Users\Huawei\source\repos\LSingleLib\obj\Debug\LSingleLib.csproj.AssemblyReference.cache
+C:\Users\Huawei\source\repos\LSingleLib\obj\Debug\LSingleLib.csproj.CoreCompileInputs.cache
+C:\Users\Huawei\source\repos\LSingleLib\obj\Debug\LSingleLib.dll
+C:\Users\Huawei\source\repos\LSingleLib\obj\Debug\LSingleLib.pdb

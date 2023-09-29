@@ -1,0 +1,11 @@
+C:\Users\Huawei\source\repos\ShoppingTest\bin\Debug\ShoppingTest.dll
+C:\Users\Huawei\source\repos\ShoppingTest\bin\Debug\ShoppingTest.pdb
+C:\Users\Huawei\source\repos\ShoppingTest\bin\Debug\LSingleLib.dll
+C:\Users\Huawei\source\repos\ShoppingTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Huawei\source\repos\ShoppingTest\bin\Debug\LSingleLib.pdb
+C:\Users\Huawei\source\repos\ShoppingTest\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Huawei\source\repos\ShoppingTest\obj\Debug\ShoppingTest.csproj.AssemblyReference.cache
+C:\Users\Huawei\source\repos\ShoppingTest\obj\Debug\ShoppingTest.csproj.CoreCompileInputs.cache
+C:\Users\Huawei\source\repos\ShoppingTest\obj\Debug\ShoppingTest.csproj.CopyComplete
+C:\Users\Huawei\source\repos\ShoppingTest\obj\Debug\ShoppingTest.dll
+C:\Users\Huawei\source\repos\ShoppingTest\obj\Debug\ShoppingTest.pdb

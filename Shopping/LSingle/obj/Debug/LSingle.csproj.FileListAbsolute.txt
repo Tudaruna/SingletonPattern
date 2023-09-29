@@ -1,0 +1,10 @@
+C:\Users\Huawei\source\repos\LSingle\bin\Debug\LSingle.exe.config
+C:\Users\Huawei\source\repos\LSingle\bin\Debug\LSingle.exe
+C:\Users\Huawei\source\repos\LSingle\bin\Debug\LSingle.pdb
+C:\Users\Huawei\source\repos\LSingle\bin\Debug\LSingleLib.dll
+C:\Users\Huawei\source\repos\LSingle\bin\Debug\LSingleLib.pdb
+C:\Users\Huawei\source\repos\LSingle\obj\Debug\LSingle.csproj.AssemblyReference.cache
+C:\Users\Huawei\source\repos\LSingle\obj\Debug\LSingle.csproj.CoreCompileInputs.cache
+C:\Users\Huawei\source\repos\LSingle\obj\Debug\LSingle.csproj.CopyComplete
+C:\Users\Huawei\source\repos\LSingle\obj\Debug\LSingle.exe
+C:\Users\Huawei\source\repos\LSingle\obj\Debug\LSingle.pdb
