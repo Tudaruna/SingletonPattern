@@ -1,0 +1,11 @@
+C:\Users\Huawei\source\repos\CashTest\bin\Debug\CashTest.dll
+C:\Users\Huawei\source\repos\CashTest\bin\Debug\CashTest.pdb
+C:\Users\Huawei\source\repos\CashTest\bin\Debug\LcashLib.dll
+C:\Users\Huawei\source\repos\CashTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Huawei\source\repos\CashTest\bin\Debug\LcashLib.pdb
+C:\Users\Huawei\source\repos\CashTest\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Huawei\source\repos\CashTest\obj\Debug\CashTest.csproj.AssemblyReference.cache
+C:\Users\Huawei\source\repos\CashTest\obj\Debug\CashTest.csproj.CoreCompileInputs.cache
+C:\Users\Huawei\source\repos\CashTest\obj\Debug\CashTest.csproj.CopyComplete
+C:\Users\Huawei\source\repos\CashTest\obj\Debug\CashTest.dll
+C:\Users\Huawei\source\repos\CashTest\obj\Debug\CashTest.pdb

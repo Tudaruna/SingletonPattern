@@ -1,0 +1,6 @@
+C:\Users\Huawei\source\repos\LcashLib\bin\Debug\LcashLib.dll
+C:\Users\Huawei\source\repos\LcashLib\bin\Debug\LcashLib.pdb
+C:\Users\Huawei\source\repos\LcashLib\obj\Debug\LcashLib.csproj.AssemblyReference.cache
+C:\Users\Huawei\source\repos\LcashLib\obj\Debug\LcashLib.csproj.CoreCompileInputs.cache
+C:\Users\Huawei\source\repos\LcashLib\obj\Debug\LcashLib.dll
+C:\Users\Huawei\source\repos\LcashLib\obj\Debug\LcashLib.pdb

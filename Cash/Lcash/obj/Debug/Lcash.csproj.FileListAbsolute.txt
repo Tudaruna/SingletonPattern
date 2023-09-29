@@ -1,0 +1,10 @@
+C:\Users\Huawei\source\repos\Lcash\bin\Debug\Lcash.exe.config
+C:\Users\Huawei\source\repos\Lcash\bin\Debug\Lcash.exe
+C:\Users\Huawei\source\repos\Lcash\bin\Debug\Lcash.pdb
+C:\Users\Huawei\source\repos\Lcash\bin\Debug\LcashLib.dll
+C:\Users\Huawei\source\repos\Lcash\bin\Debug\LcashLib.pdb
+C:\Users\Huawei\source\repos\Lcash\obj\Debug\Lcash.csproj.AssemblyReference.cache
+C:\Users\Huawei\source\repos\Lcash\obj\Debug\Lcash.csproj.CoreCompileInputs.cache
+C:\Users\Huawei\source\repos\Lcash\obj\Debug\Lcash.csproj.CopyComplete
+C:\Users\Huawei\source\repos\Lcash\obj\Debug\Lcash.exe
+C:\Users\Huawei\source\repos\Lcash\obj\Debug\Lcash.pdb
