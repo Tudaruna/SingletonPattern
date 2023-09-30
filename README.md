@@ -1,12 +1,12 @@
 # Паттерн проектирования "Одиночка" (Singleton)
 
   В данном репозитории содержатся примеры реализации паттерна "Одиночка" на языке программирования C#. 
-Далее мы осветим следущие вопросы: описание паттерна, его назначение, принцип работы паттерна, его достоинства и недостатки.
+Далее мы осветим следующие вопросы: описание паттерна, его назначение, принцип работы паттерна, его достоинства и недостатки.
 После изучения теории следует реализация паттерна и программный код.
 
 ###   В папке каждого проекта содержатся:
 * Реализация паттерна в библиотеке классов;
-* Демострирование работы в консольном приложении;
+* Демонстрирование работы в консольном приложении;
 * Тестирование методов классов и проверка корректности реализации паттерна.
 
 ## Оглавление
@@ -40,7 +40,7 @@
 
 ### Реализация паттерна на примере корзины товаров
 
-В веб-приложениях электронной коммерции часто требуется иметь единственный экземпляр класса, отвечающего за управление корзиной товаров. Паттерн Одиночка позволяет создать такой класс, который будет отслеживать добавленные в корзину товары, их количество и другую связанную информацию. Таким образом, вы можете гарантировать, что только одна корзина товаров существует во всем приложении и что она доступна из любой части системы для работы с товарами, расчета общей суммы и оформления заказа.
+  В веб-приложениях электронной коммерции часто требуется иметь единственный экземпляр класса, отвечающего за управление корзиной товаров. Паттерн Одиночка позволяет создать такой класс, который будет отслеживать добавленные в корзину товары, их количество и другую связанную информацию. Таким образом, вы можете гарантировать, что только одна корзина товаров существует во всем приложении и что она доступна из любой части системы для работы с товарами, расчета общей суммы и оформления заказа.
 
   Создадим класс **ShoppingCart**. 
   В классе **ShoppingCart** объявлен **sealed**, чтобы предотвратить наследование и гарантировать целостность паттерна Singleton. 
@@ -100,8 +100,8 @@ public void AddProduct(Product product)
 }
 ```
 
-  Теперь напишем консольное приложение для того чтобы убедится в
-правильности паттерна. В **Main** мы создаем экземпляр **ShoppingCart** через **ShoppingCart.Instance**, добавляем товары и выводим их на консоль.
+  Теперь напишем консольное приложение для того чтобы убедится в правильности паттерна. 
+  В **Main** мы создаем экземпляр **ShoppingCart** через **ShoppingCart.Instance**, добавляем товары и выводим их на консоль.
 С помощью метода **GetProducts()** получается список продуктов из корзины. Затем с помощью цикла **foreach** каждый продукт выводится на консоль с указанием его имени и цены.
 В конце программы вызывается метод **Console.ReadLine()** для ожидания ввода пользователя, чтобы консоль не закрылась сразу после вывода продуктов.
 ```C#
@@ -206,8 +206,292 @@ namespace LSingleLib.Tests
 ``` 
 ### Реализация паттерна на примере менеджера настроек
 
-Если у вас есть класс, отвечающий за управление настройками приложения, вы можете реализовать его как Одиночку. Таким образом, вы будете иметь гарантию, что настройки доступны в единственном экземпляре и изменения, внесенные в одной части приложения, будут видны во всех остальных частях.
+  Если у вас есть класс, отвечающий за управление настройками приложения, вы можете реализовать его как Одиночку. Таким образом, вы будете иметь гарантию, что настройки доступны в единственном экземпляре и изменения, внесенные в одной части приложения, будут видны во всех остальных частях.
+
+  В приведённом ниже примере класс **SettingsManager** реализует паттерн **Singleton**. Его конструктор является приватным, что не позволяет создавать экземпляры класса извне. 
+  Статическое свойство **Instance** предоставляет глобальную точку доступа к единственному экземпляру класса **SettingsManager**. Если экземпляр еще не создан, то он создается при первом вызове **Instance**, иначе возвращается уже существующий экземпляр.
+  **Private Dictionary<string, string> settings** - это приватное поле **settings** класса **SettingsManager**, которое представляет словарь (dictionary) для хранения настроек. Ключом в словаре будет строковый идентификатор, а значением - строка, представляющая настройку.
+  **Private SettingsManager()** - это приватный конструктор класса **SettingsManager**. Он инициализирует поле **settings** и загружает настройки через метод **LoadSettings()**. Поскольку конструктор приватный, он предотвращает создание экземпляров класса извне, обеспечивая, что класс будет иметь только один экземпляр.
+```C#
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ManagerLib
+{
+    public class SettingsManager
+    {
+        private static SettingsManager instance;
+        private Dictionary<string, string> settings;
+
+        private SettingsManager()
+        {
+            settings = new Dictionary<string, string>();
+            LoadSettings();
+        }
+```  
+  
+  **Public string GetSetting(string key)** - это публичный метод **GetSetting**, который принимает ключ (идентификатор настройки) и возвращает соответствующую настройку из словаря **settings**. Если ключ не существует в словаре, метод вернет значение **null**.
+  **Private void LoadSettings()** - это приватный метод **LoadSettings**, который инициализирует словарь settings и добавляет в него начальные настройки. В данном случае, метод добавляет две настройки с ключами "language" и "theme" и соответствующими значениями "en" и "light".
+  ```C#
+ public static SettingsManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new SettingsManager();
+                }
+                return instance;
+            }
+        }
+
+        public string GetSetting(string key)
+        {
+            if (settings.ContainsKey(key))
+            {
+                return settings[key];
+            }
+            return null;
+        }
+
+        public void LoadSettings()
+        {
+            settings["language"] = "en";
+            settings["theme"] = "light";
+        }
+    }
+
+}
+```  
+
+  Таким образом, класс **SettingsManager** реализует паттерн **Singleton**, который гарантирует, что у нас будет только один экземпляр класса **SettingsManager** в рамках программы. Это позволяет нам получать доступ к настройкам приложения через один и тот же экземпляр класса из любой части программы.
+  Теперь напишем консольное приложение для того чтобы убедится в правильности паттерна.
+  В **Main** мы создаем экземпляр класса **SettingsManager**. В этом примере мы получаем экземпляр **SettingsManager** через его статическое свойство **Instance**. Затем мы используем метод **GetSetting**, чтобы получить различные настройки и вывести их на консоль.
+  ```C#
+﻿using ManagerLib;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lmanager
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            SettingsManager settingsManager = SettingsManager.Instance;
+
+            // Получение настройки по ключу
+            string language = settingsManager.GetSetting("language");
+            Console.WriteLine("Current language: " + language);
+
+            string theme = settingsManager.GetSetting("theme");
+            Console.WriteLine("Current theme: " + theme);
+
+            Console.ReadKey();
+        }
+
+    }
+}
+```  
+
+  Для того, чтобы убедиться в корректности работы нашего приложения, воспользуемся модульными тестами.
+  В первом тесте **GetSettingTest** мы проверяем, что метод **GetSetting** успешно возвращает значение настройки по существующему ключу. Мы проверяем значения для ключей "language" и "theme", которые были установлены в методе **LoadSettings**.
+  Во втором тесте **LoadSettingsTest** мы проверяем, что метод **GetSetting** возвращает **null** при попытке получить значение по несуществующему ключу. 
+  В обоих тестах мы используем свойство **Instance** класса **SettingsManager**, чтобы получить экземпляр класса для тестирования.
+   ```C#
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ManagerLib;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ManagerLib.Tests
+{
+    [TestClass()]
+    public class SettingsManagerTests
+    {
+        [TestMethod()]
+        public void GetSettingTest()
+        {
+            // Arrange
+            var settingsManager = SettingsManager.Instance;
+
+            // Act
+            var language = settingsManager.GetSetting("language");
+            var theme = settingsManager.GetSetting("theme");
+
+            // Assert
+            Assert.AreEqual("en", language);
+            Assert.AreEqual("light", theme);
+        }
+
+        [TestMethod()]
+        public void LoadSettingsTest()
+        {
+            // Arrange
+            var settingsManager = SettingsManager.Instance;
+
+            // Act
+            var result = settingsManager.GetSetting("nonExistingKey");
+
+            // Assert
+            Assert.IsNull(result);
+        }
+    }
+}
+```  
 
 ### Реализация паттерна на примере кэширования
 
-Паттерн Одиночка может быть полезен при реализации кэширования данных. Вы можете создать класс кэша, который будет хранить результаты вычислений или запросов к базе данных. Благодаря Одиночке вы будете иметь доступ к кэшу из любой части приложения и управлять его содержимым централизованно.
+  Паттерн Одиночка может быть полезен при реализации кэширования данных. Вы можете создать класс кэша, который будет хранить результаты вычислений или запросов к базе данных. Благодаря Одиночке вы будете иметь доступ к кэшу из любой части приложения и управлять его содержимым централизованно.
+
+  В этом примере класс **CacheManager** реализует паттерн **Singleton**. У него есть приватный конструктор, что не позволяет создавать экземпляры класса извне. Статическое свойство **Instance** предоставляет глобальную точку доступа к единственному экземпляру класса **CacheManager**. При первом вызове **Instance** создается новый экземпляр, а при последующих вызовах возвращается уже существующий экземпляр.
+  **Private static CacheManager instance** - это статическое приватное поле **instance**, которое будет хранить единственный экземпляр класса **CacheManager**.
+  **Private Dictionary<string, object> cache** - это приватное поле **cache**, которое представляет словарь (dictionary) для хранения кэшированных данных. Ключом в словаре является строковый идентификатор, а значением - объект данных.
+  **Private CacheManager()** - это приватный конструктор класса **CacheManager**. Он инициализирует поле cache созданием нового экземпляра словаря. Поскольку конструктор приватный, он предотвращает создание экземпляров класса извне, обеспечивая, что класс будет иметь только один экземпляр.
+  ```C#
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LcashLib
+{
+    public class CacheManager
+    {
+        private static CacheManager instance;
+        private Dictionary<string, object> cache;
+
+        private CacheManager()
+        {
+            cache = new Dictionary<string, object>();
+        }
+```
+
+  **Public static CacheManager Instance** - это публичное статическое свойство **Instance**, которое является точкой доступа к единственному экземпляру класса **CacheManager**. Метод **get** этого свойства проверяет, если экземпляр еще не создан **(instance == null)**, то он создает новый экземпляр класса **CacheManager**. В конце метод возвращает текущий (или только что созданный) экземпляр.
+  **Public void AddData(string key, object data)** - это публичный метод **AddData**, который принимает ключ (идентификатор данных) и объект данных, которые нужно добавить в кэш. Метод добавляет или обновляет соответствующую запись в словаре **cache**, используя переданный ключ и данные.
+  **Public object GetData(string key)** - это публичный метод **GetData**, который принимает ключ (идентификатор данных) и возвращает соответствующий объект данных из словаря **cache**. Если ключ не существует в словаре, метод вернет значение **null**.
+  ```C#
+public static CacheManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new CacheManager();
+                }
+                return instance;
+            }
+        }
+
+        public void AddData(string key, object data)
+        {
+            cache[key] = data;
+        }
+
+        public object GetData(string key)
+        {
+            if (cache.ContainsKey(key))
+            {
+                return cache[key];
+            }
+            return null;
+        }
+    }
+}
+```
+
+  Теперь напишем консольное приложение для того чтобы убедится в правильности паттерна.
+  В **Main** мы создаем экземпляр класса **CacheManager**. В этом примере мы получаем экземпляр **CacheManager** через его статическое свойство **Instance**. Затем мы используем методы **AddDat**a для добавления данных в кэш и **GetData** для получения данных из кэша.
+  ```C#
+﻿using LcashLib;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lcash
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            CacheManager cacheManager = CacheManager.Instance;
+
+            cacheManager.AddData("userId", 123);
+            cacheManager.AddData("username", "john_doe");
+
+            int userId = (int)cacheManager.GetData("userId");
+            string username = (string)cacheManager.GetData("username");
+
+            Console.WriteLine("User ID: " + userId);
+            Console.WriteLine("Username: " + username);
+
+            Console.ReadKey();
+        }
+    }
+}
+```  
+  
+  Для того, чтобы убедиться в корректности работы нашего приложения, воспользуемся модульными тестами.
+  В первом тесте **AddDataTest** мы проверяем, что метод **AddData** успешно добавляет данные в кэш. Затем мы используем метод **GetData** для получения данных по ключу и проверяем, что полученные данные соответствуют ожидаемым.
+  Во втором тесте GetDataTest мы проверяем, что метод **GetData** успешно возвращает кэшированные данные по существующему ключу.
+  Во всех тестах мы используем свойство **Instance** класса **CacheManager**, чтобы получить экземпляр класса для тестирования. 
+  ```C#
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using LcashLib;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LcashLib.Tests
+{
+    [TestClass()]
+    public class CacheManagerTests
+    {
+        [TestMethod()]
+        public void AddDataTest()
+        {
+            // Arrange
+            var cacheManager = CacheManager.Instance;
+            var key = "key";
+            var data = "data";
+
+            // Act
+            cacheManager.AddData(key, data);
+            var result = cacheManager.GetData(key);
+
+            // Assert
+            Assert.AreEqual(data, result);
+        }
+
+        [TestMethod()]
+        public void GetDataTest()
+        {
+            // Arrange
+            var cacheManager = CacheManager.Instance;
+            var key = "key";
+            var data = "data";
+            cacheManager.AddData(key, data);
+
+            // Act
+            var result = cacheManager.GetData(key);
+
+            // Assert
+            Assert.AreEqual(data, result);
+        }
+    }
+}
+```  
